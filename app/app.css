@@ -13,3 +13,46 @@ body {
     color-scheme: dark;
   }
 }
+
+
+
+.header {
+  font-family: "Inter", sans-serif;
+}
+
+table thead th {
+  @apply border bg-slate-100 p-2;
+}
+
+table td {
+  @apply text-center;
+}
+
+.login-page {
+  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    @apply bg-[#0F0A0A];
+  }
+
+  .login-page {
+    @apply bg-[#0F0A0A];
+  }
+
+  .login-page input {
+    border: 1px solid #2A2525;
+    background-color: #0F0A0A;
+  }
+
+  .login-page input:focus {
+    border: 1px solid #2A2525;
+    outline: none;
+  }
+
+  table thead th {
+    @apply bg-gray-800
+  }
+}
