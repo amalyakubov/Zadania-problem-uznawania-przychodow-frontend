@@ -12,27 +12,22 @@ body {
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+
+  height: 100vh;
+  width: 100vw;
 }
-
-
 
 .header {
   font-family: "Inter", sans-serif;
 }
 
-table thead th {
-  @apply border bg-slate-100 p-2;
-}
-
-table td {
-  @apply text-center;
-}
 
 .login-page {
   box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.1);
 }
 
 @media (prefers-color-scheme: dark) {
+
   html,
   body {
     @apply bg-[#0F0A0A];
@@ -53,6 +48,11 @@ table td {
   }
 
   table thead th {
-    @apply bg-gray-800
+    @apply bg-[#0A0A0A]
+  }
+
+  table, th, td {
+    border: 1px solid #3f3f3f;
+    color: #9EA3B0;
   }
 }

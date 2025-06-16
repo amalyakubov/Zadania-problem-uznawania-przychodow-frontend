@@ -7,7 +7,7 @@ import {
   ScrollRestoration,
 } from "react-router";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -25,21 +25,16 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
-export const AuthContext = createContext({
-  isAuthenticated: false,
-  setIsAuthenticated: (isAuthenticated: boolean) => {},
-});
-
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-gray-900 text-white">
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -49,13 +44,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  return (
-    <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
-      <Outlet />
-    </AuthContext.Provider>
-  );
+  return <Outlet />;
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
@@ -75,14 +64,16 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
-          <code>{stack}</code>
-        </pre>
-      )}
+    <main className="container mx-auto min-h-screen bg-gray-900 p-4 pt-16 text-white">
+      <div className="rounded-lg bg-gray-800 p-8 shadow-lg">
+        <h1 className="text-2xl font-bold text-red-500">{message}</h1>
+        <p className="mt-4">{details}</p>
+        {stack && (
+          <pre className="mt-4 w-full overflow-x-auto rounded bg-gray-900 p-4">
+            <code>{stack}</code>
+          </pre>
+        )}
+      </div>
     </main>
   );
 }
