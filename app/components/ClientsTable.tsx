@@ -6,7 +6,7 @@ type ClientsTableProps = {
 
 export function ClientsTable({ data }: ClientsTableProps) {
     return (
-        <div className="overflow-hidden border border-gray-700 sm:rounded-lg shadow-md shadow-white/5">
+        <div className="overflow-hidden border border-[#1F1F1F] sm:rounded-lg shadow-md shadow-white/5">
             <table className="min-w-full">
                 <thead className="bg-[#0D1F2D]">
                     <tr>
@@ -69,8 +69,8 @@ export function ClientsTable({ data }: ClientsTableProps) {
                             <td className="px-6 py-4 whitespace-nowrap text-sm">
                                 <span
                                     className={`px-3 py-[2px] inline-flex text-xs leading-5 font-semibold rounded-lg ${item.isDeleted
-                                        ? "bg-[#CC0000] text-white"
-                                        : "bg-[#0B6F0B] text-white"
+                                        ? "text-[#CC0000] border border-[#CC0000] bg-[#CC0000]/10"
+                                        : "text-[#0B6F0B] border border-[#0B6F0B] bg-[#0B6F0B]/10"
                                         }`}
                                 >
                                     {item.isDeleted ? "Deleted" : "Active"}
