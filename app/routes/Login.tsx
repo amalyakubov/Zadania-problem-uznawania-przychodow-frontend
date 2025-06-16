@@ -6,9 +6,9 @@ export { loader, action };
 export default function Login({ loaderData }: Route.ComponentProps) {
   const { error } = (loaderData as unknown as { error?: string }) ?? {};
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-900 text-white">
-      <div className="w-[25rem] p-8 bg-gray-800 rounded-lg shadow-lg">
-        <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
+    <div className="flex flex-col justify-center items-center h-screen bg-[#0A0A0A] text-white">
+      <h1 className="text-2xl font-bold mb-6 text-center tracking-tight">Login</h1>
+      <div className="w-[25rem] p-8 bg-[#1F1F1F]/80 rounded-lg shadow-md shadow-white/5 border border-[#1F1F1F]">
         <form method="post" action="/login">
           <div className="mb-4">
             <input
@@ -16,9 +16,9 @@ export default function Login({ loaderData }: Route.ComponentProps) {
               name="username"
               type="text"
               placeholder="Username"
-              className="w-full p-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-[#1F1F1F] rounded-lg bg-[#0A0A0A] text-white focus:outline-none focus:ring-1"
             />
-            {error ? <div className="pt-2 pl-1 pb-2 text-sm text-red-500">{error}</div> : null}
+            {error ? <div className="pt-2 pl-1 pb-2 text-sm text-red-400/80">{error}</div> : null}
           </div>
           <div className="mb-6">
             <input
@@ -26,14 +26,14 @@ export default function Login({ loaderData }: Route.ComponentProps) {
               name="password"
               type="password"
               placeholder="Password"
-              className="w-full p-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-[#1F1F1F] rounded-lg bg-[#0A0A0A] text-white focus:outline-none focus:ring-1"
             />
           </div>
           <button
             type="submit"
-            className="w-full p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 cursor-pointer"
+            className="w-full p-3 bg-[#0A0A0A] text-white rounded-lg border-2 border-[#637074]/20 transition-all duration-300 cursor-pointer font-semibold"
           >
-            Login
+            Continue
           </button>
         </form>
       </div>
